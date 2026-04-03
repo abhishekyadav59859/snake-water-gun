@@ -1,4 +1,5 @@
 import random
+import datetime
 
 def get_computer_choice():
     choices = ["snake", "water", "gun"]
@@ -8,18 +9,46 @@ def determine_winner(player, computer):
     if player == computer:
         return "draw"
     wins = {
-        "snake": "water",   
-        "water": "gun",     
-        "gun": "snake"      
+        "snake": "water",
+        "water": "gun",
+        "gun": "snake"
     }
     if wins[player] == computer:
         return "player"
     return "computer"
 
+def save_score(player_score, computer_score, rounds):
+    with open("score_history.txt", "a") as f:
+        now = datetime.datetime.now().strftime("%d-%m-%Y %H:%M")
+        f.write(f"Date: {now} | Rounds: {rounds} | You: {player_score} | Computer: {computer_score}\n")
+    print("Score saved to score_history.txt!")
+
+def show_history():
+    try:
+        with open("score_history.txt", "r") as f:
+            history = f.readlines()
+        if not history:
+            print("No history found yet.")
+        else:
+            print("\n--- Score History ---")
+            for line in history:
+                print(line.strip())
+            print("---------------------")
+    except FileNotFoundError:
+        print("No history found yet. Play a game first!")
+
 def play_game():
     print("=" * 40)
     print("   Welcome to Snake, Water, Gun!")
     print("=" * 40)
+
+    print("\n1. Play game")
+    print("2. View score history")
+    choice = input("\nEnter 1 or 2: ").strip()
+
+    if choice == "2":
+        show_history()
+        return
 
     player_score = 0
     computer_score = 0
@@ -64,5 +93,8 @@ def play_game():
         print("It's a tie overall!")
     print("=" * 40)
 
+    if rounds > 0:
+        save_score(player_score, computer_score, rounds)
+1
 if __name__ == "__main__":
     play_game()

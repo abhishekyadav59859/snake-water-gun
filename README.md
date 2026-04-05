@@ -1,42 +1,185 @@
-# Snake, Water, Gun Game
+# 🐍 Snake, Water, Gun Game
 
-A Python command-line game based on the classic Indian hand game —
-Snake, Water, Gun. Similar to Rock, Paper, Scissors.
+<div align="center">
 
-## Rules
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-CLI-black?style=for-the-badge&logo=windowsterminal&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
-- Snake drinks Water — Snake wins
-- Water drowns Gun — Water wins
-- Gun kills Snake — Gun wins
-- Same choice — Draw
+> **A Python command-line game based on the classic Indian hand game — Snake, Water, Gun.**
+> Similar to Rock, Paper, Scissors but with a desi twist! 🇮🇳
 
-## How to play
+</div>
+
+---
+
+## 🎮 Game Rules
+
+```
+        🐍 SNAKE
+       /        \
+      /          \
+drinks           killed by
+     \            /
+      \          /
+    💧 WATER --drowns--> 🔫 GUN
+```
+
+| Player   | Beats    | Loses To |
+|----------|----------|----------|
+| 🐍 Snake  | 💧 Water  | 🔫 Gun   |
+| 💧 Water  | 🔫 Gun    | 🐍 Snake  |
+| 🔫 Gun    | 🐍 Snake  | 💧 Water  |
+| Same choice | —      | Draw 🤝  |
+
+---
+
+## 📂 Project Structure
+
+```
+snake-water-gun/
+│
+├── game.py              # Main game logic
+├── score_history.txt    # Auto-generated after first game
+└── README.md            # You are here!
+```
+
+---
+
+## ▶️ How to Play
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/abhishekyadav59859/snake-water-gun.git
+cd snake-water-gun
+```
+
+### 2. Run the game
 ```bash
 python game.py
 ```
 
-Type `snake`, `water`, or `gun` when prompted.
-Type `quit` to exit the game.
+### 3. Follow the prompts
 
-## Features
+```
+========================================
+   Welcome to Snake, Water, Gun!
+========================================
 
-- Play unlimited rounds against the computer
-- Real-time score tracking
-- Input validation — handles wrong inputs gracefully
-- Clean game summary at the end
-- Score history — saves every game result with date and time to score_history.txt
-- View past scores from the main menu
+1. Play game
+2. View score history
 
-## What I learned building this
+Enter 1 or 2: 1
 
-- Python functions and modular code structure
-- Random module for computer AI
-- User input handling and validation
-- Score tracking and game loop logic
-- File handling — reading and writing to text files
-- datetime module for timestamping records
-- Git workflow — commits, push, pull, merge
+Choose: snake / water / gun  (or 'quit' to exit)
+Your choice: snake
+Computer chose: water
+You win this round! 🎉
+Score — You: 1 | Computer: 0
+```
 
-## Tech used
+---
 
-Python 3 — no external libraries required
+## ✨ Features
+
+| Feature | Description |
+|--------|-------------|
+| 🎮 Unlimited Rounds | Play as many rounds as you want |
+| 🤖 Computer AI | Random computer moves every round |
+| 📊 Live Score | Real-time score shown after every round |
+| ✅ Input Validation | Handles typos and wrong inputs gracefully |
+| 💾 Score History | Saves every game result to `score_history.txt` |
+| 📅 Timestamps | Every saved game includes date and time |
+| 📜 View History | Check past game scores from the main menu |
+
+---
+
+## 🔄 Game Flow
+
+```
+         START
+           │
+           ▼
+    ┌─────────────┐
+    │  Main Menu  │
+    └──────┬──────┘
+           │
+     ┌─────┴──────┐
+     │            │
+     ▼            ▼
+  Play Game   View History
+     │
+     ▼
+ Enter Choice
+ (snake/water/gun)
+     │
+     ▼
+ Computer picks
+ random choice
+     │
+     ▼
+ Determine Winner
+ ┌───┴────┐────┐
+ ▼        ▼    ▼
+Win      Lose  Draw
+     │
+     ▼
+ Continue or Quit?
+     │
+     ▼
+ Save Score to file
+     │
+     ▼
+   END
+```
+
+---
+
+## 🧠 What I Learned Building This
+
+- 🔧 Python functions and modular code structure
+- 🎲 `random` module for computer AI
+- 🖊️ User input handling and validation
+- 📈 Score tracking and game loop logic
+- 📁 File handling — reading & writing to text files
+- ⏰ `datetime` module for timestamping records
+- 🌿 Git workflow — commits, push, pull, merge
+
+---
+
+## 🛠️ Tech Used
+
+```
+Language  : Python 3
+Libraries : random, datetime (built-in — no installs needed!)
+Platform  : Command Line Interface (CLI)
+```
+
+---
+
+## 🚀 Future Plans
+
+- [ ] Add difficulty levels (easy / hard computer AI)
+- [ ] Add multiplayer (2 players on same machine)
+- [ ] Add a best-of-3 or best-of-5 mode
+- [ ] Convert to GUI using Tkinter
+- [ ] Add a leaderboard system
+
+---
+
+## 👤 Author
+
+**Abhishek Yadav**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/abhishekyadav59859)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat&logo=github&logoColor=white)](https://github.com/abhishekyadav59859)
+[![Gmail](https://img.shields.io/badge/Gmail-Mail-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:abhishekyadav59859@gmail.com)
+
+---
+
+<div align="center">
+  Made with ❤️ and Python 🐍
+  <br/>
+  ⭐ Star this repo if you liked it!
+</div>

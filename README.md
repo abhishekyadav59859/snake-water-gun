@@ -26,12 +26,12 @@ drinks           killed by
     💧 WATER --drowns--> 🔫 GUN
 ```
 
-| Player   | Beats    | Loses To |
-|----------|----------|----------|
-| 🐍 Snake  | 💧 Water  | 🔫 Gun   |
+| Player    | Beats    | Loses To  |
+|-----------|----------|-----------|
+| 🐍 Snake  | 💧 Water  | 🔫 Gun    |
 | 💧 Water  | 🔫 Gun    | 🐍 Snake  |
 | 🔫 Gun    | 🐍 Snake  | 💧 Water  |
-| Same choice | —      | Draw 🤝  |
+| Same choice | —      | Draw 🤝   |
 
 ---
 
@@ -66,6 +66,7 @@ python game.py
 ========================================
    Welcome to Snake, Water, Gun!
 ========================================
+🏆 Your current best: 4 wins
 
 1. Play game
 2. View score history
@@ -75,8 +76,18 @@ Enter 1 or 2: 1
 Choose: snake / water / gun  (or 'quit' to exit)
 Your choice: snake
 Computer chose: water
-You win this round! 🎉
+✅ You win this round!
 Score — You: 1 | Computer: 0
+
+...
+
+========================================
+Game over! Rounds played: 5
+Final Score — You: 5 | Computer: 0
+🎉 You won the game! Well played.
+========================================
+Score saved to score_history.txt!
+🏆 New Personal Best! You scored 5 wins!
 ```
 
 ---
@@ -89,6 +100,7 @@ Score — You: 1 | Computer: 0
 | 🤖 Computer AI | Random computer moves every round |
 | 📊 Live Score | Real-time score shown after every round |
 | ✅ Input Validation | Handles typos and wrong inputs gracefully |
+| 🏆 Personal Best Tracker | Tracks and celebrates your all-time highest score |
 | 💾 Score History | Saves every game result to `score_history.txt` |
 | 📅 Timestamps | Every saved game includes date and time |
 | 📜 View History | Check past game scores from the main menu |
@@ -102,14 +114,15 @@ Score — You: 1 | Computer: 0
            │
            ▼
     ┌─────────────┐
-    │  Main Menu  │
+    │  Main Menu  │◄── Shows your current best score
     └──────┬──────┘
            │
      ┌─────┴──────┐
      │            │
      ▼            ▼
   Play Game   View History
-     │
+     │              │
+     │         Shows all-time best
      ▼
  Enter Choice
  (snake/water/gun)
@@ -122,13 +135,13 @@ Score — You: 1 | Computer: 0
  Determine Winner
  ┌───┴────┐────┐
  ▼        ▼    ▼
-Win      Lose  Draw
+Win ✅  Lose ❌  Draw 🤝
      │
      ▼
  Continue or Quit?
      │
      ▼
- Save Score to file
+ Save Score → Check Personal Best
      │
      ▼
    END
@@ -144,6 +157,7 @@ Win      Lose  Draw
 - 📈 Score tracking and game loop logic
 - 📁 File handling — reading & writing to text files
 - ⏰ `datetime` module for timestamping records
+- 🏆 Parsing saved data to compute personal best scores
 - 🌿 Git workflow — commits, push, pull, merge
 
 ---

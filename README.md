@@ -179,6 +179,9 @@ Platform  : Command Line Interface (CLI)
 - [ ] Add a best-of-3 or best-of-5 mode
 - [ ] Convert to GUI using Tkinter
 - [ ] Add a leaderboard system
+- [ ] Add colorful output using colorama library
+- [ ] Add a High Score display in terminal
+- [ ] Add a difficulty mode — Easy / Medium / Hard
 
 ---
 
